@@ -3,5 +3,6 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "amount": 4
+  "amount": 200,
+  "reference": "a reference 200"
 }
