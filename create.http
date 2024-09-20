@@ -1,1 +1,7 @@
-POST http://localhost:8090/?amount=120.20&reference=holis%20holis
+POST http://localhost:8090/invoices
+Accept: application/json
+Content-Type: application/json
+
+{
+  "amount": 4
+}
