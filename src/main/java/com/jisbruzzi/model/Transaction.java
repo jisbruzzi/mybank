@@ -1,5 +1,7 @@
 package com.jisbruzzi.model;
 
+import java.time.Instant;
+import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.UUID;
 
@@ -16,6 +18,18 @@ public class Transaction {
 		this.slogan = slogan;
 		id = UUID.randomUUID().toString();
 		timestamp = ZonedDateTime.now();
+	}
+
+	public Transaction() {
+
+	}
+
+	public Transaction(String uuid, Number amount, String reference, String slogan, Instant instant) {
+		this.id = uuid;
+		this.amount = amount;
+		this.reference = reference;
+		this.slogan = slogan;
+		this.timestamp = instant.atZone(ZoneId.systemDefault());
 	}
 
 	public String getId() {
