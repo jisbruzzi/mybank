@@ -1,8 +1,0 @@
-POST http://localhost:8090/invoices
-Accept: application/json
-Content-Type: application/json
-
-{
-  "amount": 200,
-  "reference": "a reference 200"
-}
