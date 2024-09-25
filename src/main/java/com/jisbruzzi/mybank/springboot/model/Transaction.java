@@ -1,14 +1,20 @@
 package com.jisbruzzi.mybank.springboot.model;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Column;
+import org.springframework.data.relational.core.mapping.Table;
+
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.UUID;
-
+@Table("transactions")
 public class Transaction {
 	private String slogan;
+	@Id
 	private String id;
 	private Number amount;
+	@Column("CREATED_AT")
 	private ZonedDateTime timestamp;
 	private String reference;
 
@@ -24,8 +30,7 @@ public class Transaction {
 
 	}
 
-	public Transaction(String uuid, Number amount, String reference, String slogan, Instant instant) {
-		this.id = uuid;
+	public Transaction(Number amount, String reference, String slogan, Instant instant) {
 		this.amount = amount;
 		this.reference = reference;
 		this.slogan = slogan;

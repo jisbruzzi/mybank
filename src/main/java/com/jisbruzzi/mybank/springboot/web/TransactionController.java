@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
 @RestController
 public class TransactionController {
 	private TransactionService transactionService;
@@ -20,7 +18,7 @@ public class TransactionController {
 	}
 
 	@GetMapping("/invoices")
-	public List<Transaction> getTransactions(){
+	public Iterable<Transaction> getTransactions(){
 		return transactionService.findAll();
 	}
 	@PostMapping("/invoices")
